@@ -165,3 +165,28 @@ window.addEventListener("scroll", () => {
     dot.style.transform = `translateY(${yPos}px)`
   })
 })
+
+// Wave scroll scale effect
+window.addEventListener('scroll', function() {
+  const wave = document.querySelector('.hero-wave');
+  const hero = document.querySelector('.hero');
+  
+  if (!wave || !hero) return;
+  
+  // Get hero section position
+  const heroBottom = hero.offsetTop + hero.offsetHeight;
+  const scrollPosition = window.scrollY;
+  
+  // Calculate how far we've scrolled past the start of hero
+  const scrollProgress = scrollPosition / heroBottom;
+  
+  // Scale from 1 to 0 as we scroll (adjust these values to control the effect)
+  const scale = Math.max(0, 1 - scrollProgress * 1.5);
+  
+  // Apply the scale transform
+  wave.style.transform = `translateX(-50%) scaleY(${scale})`;
+  wave.style.transformOrigin = 'bottom center';
+  
+  // Optional: Also fade out as it scales
+  // wave.style.opacity = scale;
+});

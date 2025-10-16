@@ -17,11 +17,40 @@
 }
 
 body {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Gelasio", serif;
   color: var(--text-dark);
   background-color: var(--cream);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Font utility classes */
+.gelasio-regular {
+  font-family: "Gelasio", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gelasio-medium {
+  font-family: "Gelasio", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.gelasio-semibold {
+  font-family: "Gelasio", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.gelasio-bold {
+  font-family: "Gelasio", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* Navigation */
@@ -30,8 +59,10 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--olive-dark);
-  padding: 1.5rem 2rem;
+  background-color: rgba(245, 241, 232, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem 3rem;
   z-index: 1000;
 }
 
@@ -40,62 +71,69 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .logo {
   text-decoration: none;
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .logo h1 {
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.75rem;
+  font-weight: bold;
   margin-bottom: 0.25rem;
+  color: var(--text-dark);
 }
 
 .logo p {
-  font-size: 0.875rem;
-  opacity: 0.9;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  color: var(--text-dark);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
-  color: var(--text-light);
+  color: var(--text-dark);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: opacity 0.3s;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 /* Added resume button styling in navigation */
 .resume-btn {
-  padding: 0.5rem 1.5rem;
-  background-color: var(--text-light);
-  color: var(--olive-dark) !important;
-  border-radius: 6px;
+  padding: 0.65rem 1.75rem;
+  background-color: var(--olive-dark);
+  color: var(--text-light) !important;
+  border-radius: 8px;
   font-weight: 500;
   transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
 }
 
 .resume-btn:hover {
   opacity: 1 !important;
-  background-color: var(--beige);
+  background-color: var(--brown);
   transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
   margin-top: 100px;
-  padding: 4rem 2rem 0;
+  padding: 1rem 2rem 0;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -104,8 +142,8 @@ body {
   gap: 4rem;
   align-items: center;
   position: relative;
-  min-height: 85vh;
-  padding-bottom: 8rem;
+  min-height: 70vh;
+  padding-bottom: 4rem;
   overflow: visible;
 }
 
@@ -115,7 +153,7 @@ body {
 
 .hero-title {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -134,21 +172,22 @@ body {
 }
 
 .bonsai-tree {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
 }
 
 .hero-wave {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 200px;
   background: var(--brown);
-  clip-path: path('M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1940 80V200H1380C1320 200 1200 200 1080 200C960 200 840 200 720 200C600 200 480 200 360 200C240 200 120 200 60 200H0V0Z');
-  z-index: -1;
+  clip-path: path('M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L100090 80V200H1380C1320 200 1200 200 1080 200C960 200 840 200 720 200C600 200 480 200 360 200C240 200 120 200 60 200H0V0Z');
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Innovation & Problem Solving Sections */
