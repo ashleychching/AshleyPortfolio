@@ -1,8 +1,16 @@
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href")
+    
+    // Skip if it's just '#' or too short
+    if (!href || href === "#" || href.length <= 1) {
+      e.preventDefault()
+      return
+    }
+    
     e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
+    const target = document.querySelector(href)
     if (target) {
       const navHeight = document.querySelector(".nav").offsetHeight
       const targetPosition = target.offsetTop - navHeight - 20
