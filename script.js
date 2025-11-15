@@ -197,4 +197,64 @@ window.addEventListener('scroll', function() {
   
   // Optional: Also fade out as it scales
   // wave.style.opacity = scale;
+}); // Fixed: closed the event listener here
+
+// Experience card expand/collapse functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var cards = document.querySelectorAll('.experience-card');
+  var expandedCard = null;
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      var cardId = this.getAttribute('data-id');
+      var details = this.querySelector('.experience-details');
+      var button = this.querySelector('.more-info');
+
+      // If this card is already expanded, collapse it
+      if (expandedCard === cardId) {
+        this.classList.remove('expanded');
+        if (details) details.classList.remove('show');
+        button.style.display= "block";
+        button.textContent = 'Click for more information';
+        expandedCard = null;
+
+        // Remove shrunk class from all cards
+        cards.forEach(function(c) {
+          c.classList.remove('shrunk');
+        });
+      } else {
+        // Collapse previously expanded card
+        cards.forEach(function(c) {
+          c.classList.remove('expanded');
+          var d = c.querySelector('.experience-details');
+          if (d) d.classList.remove('show');
+          const btn = c.querySelector('.more-info');
+          if (btn) {
+            btn.textContent = 'Click for more information';
+            btn.style.display = 'block';
+          }
+
+        });
+
+        // Expand this card
+        this.classList.add('expanded');
+        if (details) details.classList.add('show');
+        button.style.display= "none";
+        // button.textContent = 'Click to collapse';
+        expandedCard = cardId;
+
+        // Shrink other cards
+        var currentCardId = cardId;
+        cards.forEach(function(c) {
+          if (c.getAttribute('data-id') !== currentCardId) {
+            c.classList.add('shrunk');
+          } else {
+            c.classList.remove('shrunk');
+          }
+        });
+      }
+    });
+  });
 });
