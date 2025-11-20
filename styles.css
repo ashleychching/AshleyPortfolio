@@ -189,7 +189,8 @@ body {
   width: 100vw;
   height: 220px;
   background: var(--brown);
-  clip-path: path('M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1440 73.3C1560 80 1680 87 1800 90C1920 93 2040 93 2160 90C2280 87 2400 80 2460 76.7C2480 74 2500 70 2520 65L2520 200L0 200L0 0Z');
+  clip-path: path('M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1440 73.3C1560 80 1680 87 1800 90C1920 93 2040 93 2160 90C2280 87 2400 80 2520 76.7C2640 73 2760 73 2880 76.7C3000 80 3120 87 3240 90C3360 93 3480 93 3600 90C3720 87 3840 80 3960 76.7C4080 73 4200 73 4320 76.7C4440 80 4560 87 4680 90C4800 93 4920 93 5040 90C5160 87 5280 80 5400 76.7C5520 73 5640 73 5760 76.7C5880 80 10000 87 6000 90L10000 200L0 200L0 0Z');
+  width: 100vw;
   pointer-events: none;
   z-index: 0;
 }
@@ -750,13 +751,12 @@ body {
 /* Wave element for footer */
 .footer-wave {
   position: absolute;
-  
-  top: 0;
+  top: -5rem;
   left: 0;
   right: 0;
-  height: 300px;
-  background: var(--cream);
-  clip-path: path('M0 100L60 90C120 80 240 60 360 53.3C480 47 600 53 720 56.7C840 60 960 60 1080 46.7C1200 33 1320 7 1380 -6.7L1440 -20V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V100Z');
+  height: 100px;
+  background: var(--beige);
+  clip-path: path('M0 80C150 70 300 60 450 65C600 70 750 80 900 75C1050 70 1200 60 1350 55C1500 50 1650 50 1800 45C1950 40 2100 35 2250 30C2400 25 2550 20 2700 18C2850 15 3000 15 3150 12C3300 10 3450 5 3600 3C3750 0 3900 0 4050 0C4200 0 4350 0 4500 0L6000 0L6000 200L0 200L0 80Z');
   z-index: 0;
 }
 
@@ -766,22 +766,40 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  justify-content: space-between;
+  align-items: flex-end;
   position: relative;
   z-index: 1;
-  padding-top: 3rem;
+  padding-top: 0rem;
+}
+
+
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Pushes content to bottom */
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end; /* Pushes content to bottom */
 }
 
 .footer-logo {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .logo-ac {
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 300;
-  letter-spacing: 0.1em;
+  margin-bottom: -1.5rem;
+  color: var(--brown);
 }
 
 .logo-name {
@@ -812,13 +830,6 @@ body {
 
 .social-links a:hover {
   opacity: 0.6;
-}
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
 }
 
 .footer-bird {
