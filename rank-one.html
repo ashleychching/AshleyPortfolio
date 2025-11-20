@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank One - Ashley Chan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <h1>Ashley Chan</h1>
+                <p>Software Engineer</p>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About me</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#projects" class="back-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+        </a>
+        
+        <div class="project-intro">
+            <p class="project-category">Mobile App • Sports Tech</p>
+            <h1 class="project-title">Rank One</h1>
+            <p class="project-description">Rank One is a badminton spec comparison application. It's a place where you can meet all of your badminton racket needs in one place. Search through all available rackets to see which racket suits your needs the best and upgrade your badminton game play!</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <h3>Role</h3>
+                    <p>Product Designer</p>
+                </div>
+                <div class="meta-item">
+                    <h3>Category</h3>
+                    <p>Sports Equipment</p>
+                </div>
+                <div class="meta-item">
+                    <h3>Platform</h3>
+                    <p>iOS, Android</p>
+                </div>
+                <div class="meta-item">
+                    <h3>Tools</h3>
+                    <p>Figma, React Native</p>
+                </div>
+            </div>
+            
+            <a href="#" class="case-study-link">
+                View prototype
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 10h10M10 5l5 5-5 5"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Hero Image -->
+    <section class="project-hero">
+        <img src="/placeholder.svg?height=600&width=1200" alt="Rank One app mockup showing racket comparison" class="hero-img">
+    </section>
+
+    <!-- Project Content -->
+    <article class="project-content">
+        <section class="content-section">
+            <h2>The Problem</h2>
+            <p>Purchasing rackets can be a huge purchasing decision that many may not know how to approach. By helping consumers be more informed about the rackets they want to purchase, they will feel more empowered to make the big purchase and improve their game.</p>
+            
+            <p>Badminton players face several challenges when shopping for rackets. Technical specifications like stiffness, weight, balance point, and stringing tension significantly impact performance, but comparing these specs across different brands and models is time-consuming. Players often visit multiple websites, read scattered reviews, and struggle to make side-by-side comparisons. This fragmented shopping experience leads to decision paralysis and sometimes results in purchasing the wrong racket for their playing style.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>The Solution</h2>
+            <p>Since there is no centralized place to compare the specs of rackets, I decided to create a place for which you can. I created separate views in which you can compare and browse through rackets you search for or add to your view.</p>
+            
+            <p>Rank One streamlines the racket selection process by aggregating comprehensive specifications from all major badminton racket brands in one intuitive platform. The app empowers players to make data-driven decisions through powerful comparison tools, flexible sorting options, and an interface designed around how badminton players actually shop for equipment.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Features & Design Decisions</h2>
+            
+            <h3>Sort by Feature - Prioritize What Matters Most</h3>
+            <p><strong>User Scenario:</strong> If the user is trying to sort by the qualities they value the most</p>
+            
+            <p><strong>Design Solution:</strong> I added a sort by feature, which would help you sort your rackets that you add based on price, stiffness, weight, and stringing tension.</p>
+            
+            <p>This feature recognizes that different players have different priorities. A beginner might prioritize price, while an advanced player might focus on stiffness and weight. The sorting functionality allows users to quickly reorganize their comparison view based on the specifications that matter most to their playing style and budget.</p>
+        </section>
+
+        <div class="project-images-grid">
+            <img src="/placeholder.svg?height=600&width=400" alt="Sort by feature showing filter options">
+        </div>
+
+        <section class="content-section">
+            <h3>Browse by Brand - Leverage Brand Loyalty</h3>
+            <p><strong>User Scenario:</strong> If the user prefers a certain brand of rackets that they usually play on</p>
+            
+            <p><strong>Design Solution:</strong> I added a screen in which the user can browse by brand. This design choice balances what the user wants and efficiency. If the user doesn't know what kind of rackets they want, they can just be more general searching by brand.</p>
+            
+            <p>Many badminton players develop preferences for specific brands based on their playing experience. Some prefer Yonex for its technology, others trust Victor or Li-Ning for their quality. The browse-by-brand feature caters to this behavior while also serving as a discovery tool for players who want to explore all offerings from a manufacturer they trust.</p>
+        </section>
+
+        <div class="project-images-grid">
+            <img src="/placeholder.svg?height=600&width=400" alt="Brand browsing screen with logos">
+        </div>
+
+        <section class="content-section">
+            <h3>Effortless Comparison Management</h3>
+            <p><strong>User Scenario:</strong> If the user changes their mind about what rackets they want</p>
+            
+            <p><strong>Design Solution:</strong> I made the comparison view include easily accessible buttons for adding a racket (one tap) and removing a racket from their view (one swipe).</p>
+            
+            <p>The racket selection process is often iterative. Players might start with five rackets, narrow down to three, then add two more for comparison. The interface needed to support this fluid exploration without creating friction. The one-tap add and one-swipe remove interactions make it effortless to refine your comparison set, encouraging users to experiment and thoroughly explore their options.</p>
+        </section>
+
+        <div class="project-images-grid">
+            <img src="/placeholder.svg?height=600&width=400" alt="Comparison view with add and remove interactions">
+        </div>
+
+        <section class="content-section">
+            <h2>Information Architecture</h2>
+            <p>The app is structured around three core user flows:</p>
+            
+            <p><strong>Search & Discover:</strong> Users can search by racket name, browse by brand, or explore curated collections based on playing style (offensive, defensive, all-around).</p>
+            
+            <p><strong>Compare:</strong> Add rackets to a comparison view where specifications are displayed side-by-side in an easy-to-scan format. Key specs like weight, balance point, stiffness, and recommended tension are prominently displayed.</p>
+            
+            <p><strong>Decide:</strong> Sort and filter the comparison view to surface the best options based on individual priorities. Quick access to detailed reviews and purchasing options helps users move from research to purchase seamlessly.</p>
+        </section>
+
+        <div class="project-images-grid">
+            <img src="/placeholder.svg?height=500&width=600" alt="App information architecture">
+            <img src="/placeholder.svg?height=500&width=600" alt="Comparison view detailed specs">
+        </div>
+
+        <section class="content-section">
+            <h2>Design Principles</h2>
+            
+            <p><strong>Clarity Over Complexity:</strong> Badminton racket specifications are technical, but the presentation shouldn't be overwhelming. Visual hierarchies and clear labeling make specs accessible to both beginners and advanced players.</p>
+            
+            <p><strong>Flexibility in Exploration:</strong> Players approach racket shopping differently. Some know exactly what they want; others need to explore. The app supports both directed search and open-ended browsing.</p>
+            
+            <p><strong>Frictionless Interaction:</strong> Every tap should move the user closer to finding their perfect racket. Minimizing the steps between discovering a racket and comparing it was a core design goal.</p>
+            
+            <p><strong>Data-Driven Decisions:</strong> Empowering users with comprehensive, accurate specifications helps them make confident purchasing decisions and ultimately improve their game.</p>
+        </section>
+
+        <div class="project-images-grid">
+            <img src="/placeholder.svg?height=500&width=1200" alt="Multiple app screens showing user flow">
+        </div>
+
+        <section class="content-section">
+            <h2>Impact & Future Enhancements</h2>
+            <p>Rank One addresses a genuine need in the badminton community by centralizing racket information that was previously scattered across manufacturer websites, forums, and retail platforms. The app empowers players to make informed purchasing decisions, potentially saving them from costly mistakes and helping them find rackets that truly match their playing style.</p>
+            
+            <p><strong>Potential Future Features:</strong></p>
+            <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                <li style="margin-bottom: 0.75rem;">Personalized recommendations based on playing style and skill level</li>
+                <li style="margin-bottom: 0.75rem;">Community reviews and ratings from verified racket owners</li>
+                <li style="margin-bottom: 0.75rem;">Price tracking and alerts for favorite rackets</li>
+                <li style="margin-bottom: 0.75rem;">Integration with retailers for seamless purchasing</li>
+                <li style="margin-bottom: 0.75rem;">Racket history and gear management for tracking personal equipment</li>
+            </ul>
+            
+            <p>By consolidating the badminton racket shopping experience into one comprehensive platform, Rank One helps players spend less time researching and more time on the court.</p>
+        </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <span class="logo-ac">AC</span>
+                    <span class="logo-name">Ashley Chan</span>
+                </div>
+                <p class="footer-greeting">Hello there!</p>
+                <p class="footer-email">ashleychan@example.com</p>
+                <div class="social-links">
+                    <a href="https://github.com/ashleychching" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ashleychan529/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:ashleychan1353@gmail.com" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <nav class="footer-nav">
+                    <a href="index.html#about">About me</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#experience">Experience</a>
+                </nav>
+            </div>
+        </div>
+        <div class="decorative-dots dots-footer-left"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
