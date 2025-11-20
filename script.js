@@ -113,6 +113,37 @@ document.querySelectorAll(".content-section, .experience-item, .project-card").f
   observer.observe(el)
 })
 
+// ADDED: Scroll animation for About section
+const aboutObserverOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+}
+
+const aboutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible')
+    }
+  })
+}, aboutObserverOptions)
+
+// Observe about section elements
+const aboutAnimatedElements = document.querySelectorAll('.scroll-animate')
+aboutAnimatedElements.forEach(el => {
+  aboutObserver.observe(el)
+})
+
+// Check if about elements are already in view on page load
+window.addEventListener('load', () => {
+  aboutAnimatedElements.forEach(el => {
+    const rect = el.getBoundingClientRect()
+    const isInView = rect.top < window.innerHeight && rect.bottom > 0
+    if (isInView) {
+      el.classList.add('visible')
+    }
+  })
+})
+
 // Active navigation highlighting
 function updateActiveNav() {
   const sections = document.querySelectorAll("section[id]")
@@ -194,10 +225,7 @@ window.addEventListener('scroll', function() {
   // Apply the scale transform
   wave.style.transform = `translateX(-50%) scaleY(${scale})`;
   wave.style.transformOrigin = 'bottom center';
-  
-  // Optional: Also fade out as it scales
-  // wave.style.opacity = scale;
-}); // Fixed: closed the event listener here
+})
 
 // Experience card expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -242,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('expanded');
         if (details) details.classList.add('show');
         button.style.display= "none";
-        // button.textContent = 'Click to collapse';
         expandedCard = cardId;
 
         // Shrink other cards

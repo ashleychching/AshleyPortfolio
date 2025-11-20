@@ -115,7 +115,7 @@ body {
 /* Added resume button styling in navigation */
 .resume-btn {
   padding: 0.65rem 1.75rem;
-  background-color: var(--right-green);
+  background-color: var(--brown);
   color: var(--text-light) !important;
   border-radius: 8px;
   font-weight: 500;
@@ -128,7 +128,7 @@ body {
 
 .resume-btn:hover {
   opacity: 1 !important;
-  background-color: var(--brown);
+  background-color: var(--right-green);
   transform: translateY(-2px);
 }
 
@@ -332,6 +332,22 @@ body {
 .content-image img {
     width: 100%;
     height: auto;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.15s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add slight delay to second section for staggered effect */
+.problem-solving .scroll-animate {
+    transition-delay: 0.1s;
 }
 
 
