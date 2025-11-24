@@ -299,8 +299,8 @@ body {
     background-size: 15px 15px;
     opacity: 0.25;
     z-index: 1;           /* behind */
-    top: 80px;           /* adjust position as needed */
-    left: 40px;
+    top: 10px;           /* adjust position as needed */
+    left: 0px;
 }
 
 .decorative-dots2 {
@@ -311,8 +311,8 @@ body {
     background-size: 15px 15px;
     opacity: 0.25;
     z-index: 1;           /* behind */
-    top: 430px;           /* adjust position as needed */
-    left: 590px;
+    top: 300px;           /* adjust position as needed */
+    left: 500px;
 }
 
 /* Ensure each section behaves like a block inside the flex row */
