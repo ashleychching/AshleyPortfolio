@@ -22,6 +22,51 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
+//logo animation
+const titles = ["Software Engineer", "UX/UI Designer", "Problem Solver"];
+let titleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function type() {
+    const currentTitle = titles[titleIndex];
+    const typedTextElement = document.getElementById('typed-text');
+    
+    if (!isDeleting) {
+        // Typing
+        typedTextElement.textContent = currentTitle.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentTitle.length) {
+            // Finished typing, wait before deleting
+            isDeleting = true;
+            typingSpeed = 2000; // Pause at end
+        } else {
+            typingSpeed = 100; // Normal typing speed
+        }
+    } else {
+        // Deleting
+        typedTextElement.textContent = currentTitle.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+            // Finished deleting, move to next title
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
+            typingSpeed = 500; // Pause before typing next word
+        } else {
+            typingSpeed = 50; // Faster deleting speed
+        }
+    }
+    
+    setTimeout(type, typingSpeed);
+}
+
+// Start the typing animation when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(type, 500); // Small delay before starting
+});
 // Projects Carousel
 const carouselTrack = document.querySelector(".carousel-track")
 const prevBtn = document.querySelector(".carousel-btn.prev")
