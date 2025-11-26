@@ -303,6 +303,7 @@ body {
   font-size: 1.125rem;
   color: var(--brown);
   line-height: 1.8;
+  width: 75%;
 }
 
 .hero-image {
@@ -421,75 +422,75 @@ body {
 
 /* Wrapper to put both sections side-by-side */
 .innovation-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: -20px;
-    background-color: var(--brown);
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+  background-color: var(--brown);
+  overflow: hidden;
 }
 
 .decorative-dots1 {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background-image: radial-gradient(circle, var(--text-light) 2px, transparent 2px);
-    background-size: 15px 15px;
-    opacity: 0.25;
-    z-index: 1;
-    top: 10px;
-    left: 0px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(circle, var(--text-light) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.25;
+  z-index: 1;
+  top: 10px;
+  left: 0px;
 }
 
 .decorative-dots2 {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background-image: radial-gradient(circle, var(--text-light) 2px, transparent 2px);
-    background-size: 15px 15px;
-    opacity: 0.25;
-    z-index: 1;
-    top: 300px;
-    left: 500px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(circle, var(--text-light) 2px, transparent 2px);
+  background-size: 15px 15px;
+  opacity: 0.25;
+  z-index: 1;
+  top: 300px;
+  left: 500px;
 }
 
 /* Ensure each section behaves like a block inside the flex row */
 .innovation,
 .problem-solving {
-    width: 50%;
-    padding: 7rem 3rem;    
+  width: 50%;
+  padding: 7rem 3rem;    
 }
 
 /* Remove 2-column grid since you no longer need it */
 .section-container {
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Optional: Image size */
 .content-image img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
     
 }
 
 .scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.15s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.15s ease-out;
 }
 
 .scroll-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-    overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
 }
 
 /* Add slight delay to second section for staggered effect */
 .problem-solving .scroll-animate {
-    transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 /* Projects Section */
@@ -497,7 +498,7 @@ body {
   padding: 6rem 2rem;
   background-color: var(--cream);
   position: relative;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .section-header {
@@ -514,108 +515,120 @@ body {
 }
 
 .content-image {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .content-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-    z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  z-index: 2;
 }
 
 /* MOBILE RESPONSIVE - Stack vertically with image first */
 @media (max-width: 968px) {
-    .innovation-wrapper {
-        flex-direction: column;
-        margin-top: 0;
-    }
-    
-    .innovation,
-    .problem-solving {
-        width: 100%;
-        padding: 3rem 2rem;
-    }
-    
-    /* Image section comes first */
-    .innovation {
-        order: 1;
-        padding-bottom: 2rem;
-    }
-    
-    /* Text section comes second */
-    .problem-solving {
-        order: 2;
-        padding-top: 2rem;
-    }
-    
-    .section-container {
-        max-width: 100%;
-    }
-    
-    .content-right {
-        justify-self: center;
-        max-width: 100%;
-        text-align: left;
-    }
-    
-    .innovation h2,
-    .problem-solving h2 {
-        font-size: 2rem;
-    }
-    
-    .content-image {
-        padding: 1rem;
-    }
-    
-    .content-image img {
-        max-width: 400px;
-    }
-    
-    /* Adjust decorative dots for mobile */
-    .decorative-dots1 {
-        width: 100px;
-        height: 100px;
-        top: 5px;
-        left: 5px;
-    }
-    
-    .decorative-dots2 {
-        width: 100px;
-        height: 100px;
-        top: auto;
-        bottom: 5px;
-        left: auto;
-        right: 5px;
-    }
+  .nav-container{
+    padding: 1rem;
+  }
+  .hero-content{
+    padding: 1rem;
+  }
+  .scroll-animate.visible {
+    padding: 1rem;
+  }
+  .innovation-wrapper {
+      flex-direction: column;
+      margin-top: 0;
+  }
+  
+  .innovation,
+  .problem-solving {
+      width: 100%;
+      padding: 3rem 2rem;
+  }
+  
+  /* Image section comes first */
+  .innovation {
+      order: 1;
+      padding-bottom: 2rem;
+  }
+  
+  /* Text section comes second */
+  .problem-solving {
+      order: 2;
+      padding-top: 2rem;
+  }
+  
+  .section-container {
+      max-width: 100%;
+  }
+  
+  .content-right {
+      justify-self: center;
+      max-width: 100%;
+      text-align: left;
+  }
+  
+  .innovation h2,
+  .problem-solving h2 {
+      font-size: 2rem;
+  }
+  
+  .content-image {
+      padding: 1rem;
+  }
+  
+  .content-image img {
+      max-width: 400px;
+  }
+  
+  /* Adjust decorative dots for mobile */
+  .decorative-dots1 {
+      width: 100px;
+      height: 100px;
+      top: 5px;
+      left: 5px;
+  }
+  
+  .decorative-dots2 {
+      width: 100px;
+      height: 100px;
+      top: auto;
+      bottom: 5px;
+      left: auto;
+      right: 5px;
+  }
 }
 
 @media (max-width: 480px) {
-    .innovation,
-    .problem-solving {
-        padding: 2rem 1rem;
-    }
-    
-    .innovation h2,
-    .problem-solving h2 {
-        font-size: 1.75rem;
-    }
-    
-    .innovation p,
-    .problem-solving p {
-        font-size: 1rem;
-    }
-    
-    .content-image img {
-        max-width: 100%;
-    }
+  .hero-subtitle{
+    width: 100%;
+  }
+  .innovation,
+  .problem-solving {
+      padding: 2rem 1rem;
+  }
+  
+  .innovation h2,
+  .problem-solving h2 {
+      font-size: 1.75rem;
+  }
+  
+  .innovation p,
+  .problem-solving p {
+      font-size: 1rem;
+  }
+  
+  .content-image img {
+      max-width: 100%;
+  }
 }
 .carousel-controls {
   display: flex;
@@ -724,9 +737,9 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
-  flex-wrap: nowrap; /* Changed from wrap to nowrap */
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  overflow-x: auto; /* Add scroll if needed */
+  overflow-x: auto;
   align-items: stretch;
 }
 
@@ -743,8 +756,7 @@ body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /* Card content wrapper - horizontal layout for expanded state */
@@ -772,13 +784,13 @@ body {
 }
 
 .experience-card.expanded {
-  flex: 0 0 calc(60% - 1.35rem); /* 60% minus gap */
+  flex: 0 0 calc(60% - 1.35rem);
   max-width: calc(60% - 1.35rem);
-   height: 250px;
+  height: 250px;
 }
 
 .experience-card.shrunk {
-  flex: 0 0 calc(20% - 1.35rem); /* 20% minus gap */
+  flex: 0 0 calc(20% - 1.35rem);
   max-width: calc(20% - 1.35rem);
   opacity: 0.6;
 }
@@ -904,30 +916,77 @@ body {
   visibility: visible;
 }
 
-
-/* Responsive design for smaller screens */
+/* Tablet Responsive */
 @media (max-width: 1024px) {
+  .experience-grid {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  
   .experience-card {
     flex: 0 0 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
-    height: 280px;
+    height: auto;
+    min-height: 250px;
+  }
+  
+  .experience-card.expanded {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
   }
   
   .experience-card.shrunk {
     flex: 0 0 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
+    opacity: 1;
   }
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .experience-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .experience-section .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .experience-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: visible;
+    gap: 1.5rem;
+  }
+  
   .experience-card,
   .experience-card.expanded,
   .experience-card.shrunk {
     flex: 0 0 100%;
     max-width: 100%;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    opacity: 1;
+  }
+  
+  /* Reset all cards to normal state on mobile */
+  .experience-card.shrunk .experience-info h3,
+  .experience-card.shrunk .role,
+  .experience-card.shrunk .date {
+    font-size: inherit;
+  }
+  
+  .experience-card.shrunk .company-logo {
+    width: 50px;
   }
   
   /* Stack description below on mobile */
+  .experience-card .experience-card-content,
   .experience-card.expanded .experience-card-content {
     flex-direction: column;
     gap: 1rem;
@@ -944,26 +1003,50 @@ body {
   .experience-card.expanded .experience-card-left {
     min-width: auto;
   }
-}
-.role {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #555;
-  margin: 0.2rem 0;
-}
-
-.date {
-  font-size: 0.9rem;
-  color: #777;
+  
+  /* Make "more info" always visible on mobile */
+  .experience-card .more-info {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
-/* Footer */
+/* Small Mobile */
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 3rem 1rem;
+  }
+  
+  .experience-section .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .experience-card {
+    padding: 1.25rem;
+  }
+  
+  .experience-info h3 {
+    font-size: 1rem;
+  }
+  
+  .role {
+    font-size: 0.9rem;
+  }
+  
+  .date {
+    font-size: 0.85rem;
+  }
+  
+  .company-logo {
+    width: 40px;
+  }
+}
+
 .footer {
   background-color: var(--beige);
   padding: 4rem 2rem;
   position: relative;
 }
-
 /* Wave element for footer */
 .footer-wave {
   position: absolute;

@@ -155,6 +155,125 @@ if (carouselTrack && prevBtn && nextBtn) {
     }
   })
 
+  // Touch/Swipe functionality
+  let touchStartX = 0
+  let touchEndX = 0
+  let isDragging = false
+  let startTransform = 0
+
+  carouselTrack.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX
+    isDragging = true
+    carouselTrack.style.transition = 'none'
+    
+    const transform = window.getComputedStyle(carouselTrack).transform
+    if (transform !== 'none') {
+      const matrix = transform.match(/matrix\((.+)\)/)
+      if (matrix) {
+        startTransform = parseFloat(matrix[1].split(', ')[4])
+      }
+    } else {
+      startTransform = 0
+    }
+  }, { passive: true })
+
+  carouselTrack.addEventListener('touchmove', (e) => {
+    if (!isDragging) return
+    
+    touchEndX = e.touches[0].clientX
+    const diff = touchEndX - touchStartX
+    const newTransform = startTransform + diff
+    
+    carouselTrack.style.transform = `translateX(${newTransform}px)`
+  }, { passive: true })
+
+  carouselTrack.addEventListener('touchend', () => {
+    if (!isDragging) return
+    isDragging = false
+    
+    carouselTrack.style.transition = 'transform 0.3s ease'
+    
+    const diff = touchEndX - touchStartX
+    const threshold = 50
+    
+    const visibleCards = getVisibleCards()
+    const maxIndex = Math.max(0, totalCards - visibleCards)
+    
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0 && currentIndex > 0) {
+        currentIndex--
+      } else if (diff < 0 && currentIndex < maxIndex) {
+        currentIndex++
+      }
+    }
+    
+    updateCarousel()
+    touchStartX = 0
+    touchEndX = 0
+  })
+
+  // Mouse drag functionality
+  let mouseStartX = 0
+  let mouseEndX = 0
+  let isMouseDragging = false
+
+  carouselTrack.addEventListener('mousedown', (e) => {
+    mouseStartX = e.clientX
+    isMouseDragging = true
+    carouselTrack.style.transition = 'none'
+    carouselTrack.style.cursor = 'grabbing'
+    carouselTrack.style.userSelect = 'none'
+    
+    const transform = window.getComputedStyle(carouselTrack).transform
+    if (transform !== 'none') {
+      const matrix = transform.match(/matrix\((.+)\)/)
+      if (matrix) {
+        startTransform = parseFloat(matrix[1].split(', ')[4])
+      }
+    } else {
+      startTransform = 0
+    }
+    
+    e.preventDefault()
+  })
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isMouseDragging) return
+    
+    mouseEndX = e.clientX
+    const diff = mouseEndX - mouseStartX
+    const newTransform = startTransform + diff
+    
+    carouselTrack.style.transform = `translateX(${newTransform}px)`
+  })
+
+  document.addEventListener('mouseup', () => {
+    if (!isMouseDragging) return
+    isMouseDragging = false
+    
+    carouselTrack.style.transition = 'transform 0.3s ease'
+    carouselTrack.style.cursor = 'grab'
+    carouselTrack.style.userSelect = 'auto'
+    
+    const diff = mouseEndX - mouseStartX
+    const threshold = 50
+    
+    const visibleCards = getVisibleCards()
+    const maxIndex = Math.max(0, totalCards - visibleCards)
+    
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0 && currentIndex > 0) {
+        currentIndex--
+      } else if (diff < 0 && currentIndex < maxIndex) {
+        currentIndex++
+      }
+    }
+    
+    updateCarousel()
+    mouseStartX = 0
+    mouseEndX = 0
+  })
+
   // Update on window resize
   let resizeTimer
   window.addEventListener("resize", () => {
@@ -166,6 +285,9 @@ if (carouselTrack && prevBtn && nextBtn) {
 
   // Initial update
   updateCarousel()
+  
+  // Set cursor style
+  carouselTrack.style.cursor = 'grab'
 }
 
 // Intersection Observer for fade-in animations
